@@ -1,16 +1,14 @@
 <!doctype html>
 <html>
 <head>
-    <title>21 Savage Fan Site</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <title>Admin</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
 
     <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <h1><span class="fa fa-anchor"></span> Admin Page</h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
 
@@ -36,32 +34,25 @@
             </div>
         </div>
         <div class="col-sm-6">
-          <h3>Messages</h3>
-          <ul class="messages">
-          <% for(var i=0; i<messages.length; i++) {%>
-            <li class="message">
-              <span><%= messages[i].name %></span>
-              <span><%= messages[i].msg %></span>
-              <span><%= messages[i].thumbUp %></span>
+          <h3>Status</h3>
+          <ul class="Status">
+          <% for(var i=0; i<results.length; i++) {%>
+            <li class="user">
+              <span><%= results[i].name %></span>
+              <span><%= results[i].wins %></span>
+              <span><%= results[i].losses %></span>
+              <span><%= results[i].casinoBank %></span>
               <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
               <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
               <span><i class="fa fa-trash" aria-hidden="true"></i></span>
             </li>
           <% } %>
           </ul>
-
-          <h2>Add a message</h2>
-        <% if (user.local.email) { %>
-          <form action="/messages" method="POST">
-            <input type="text" value="<%= user.local.email %>" name="name">
-            <input type="text" placeholder="message" name="msg">
-            <button type="submit">Submit</button>
-          </form>
         </div>
         <% } %>
 
 </div>
-
+</div>
 <script src="main.js"></script>
 
 </body>
